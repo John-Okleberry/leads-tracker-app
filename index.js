@@ -61,4 +61,5 @@ deleteBtn.addEventListener("dblclick", function() {
 inputBtn.addEventListener("click", function() {
     push(referenceInDB, inputEl.value)
     inputEl.value = ""
+    console.log(process.env.DATABASE_URL)
 })
