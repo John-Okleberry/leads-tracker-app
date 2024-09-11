@@ -1,10 +1,12 @@
 // Imports from Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"
-import { getDatabase,
-         ref,
-         push,
-         onValue,
-         remove } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js"  
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue,
+    remove
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js"
 
 // Elements on the page for interaction
 const inputEl = document.getElementById("input-el")
@@ -18,9 +20,9 @@ const deleteBtn = document.getElementById("delete-btn")
 
 // Provides the Firebase database URL (works through dotenv)
 const firebaseConfig = {
-	// databaseURL: process.env.DATABASE_URL
+    // databaseURL: process.env.DATABASE_URL
     databaseURL: import.meta.env.VITE_DATABASE_URL
-  }
+}
 
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
@@ -43,9 +45,9 @@ function render(leads) {
 }
 
 // When a change is made to the database creates an array from the DB object values and renders it
-onValue(referenceInDB, function(snapshot) {
+onValue(referenceInDB, function (snapshot) {
     const snapshotDoesExist = snapshot.exists()
-    if(snapshotDoesExist){
+    if (snapshotDoesExist) {
         const snapshotValues = snapshot.val()
         const leads = Object.values(snapshotValues)
         render(leads)
@@ -53,15 +55,17 @@ onValue(referenceInDB, function(snapshot) {
 })
 
 // Removes the current data from the database and removes the old data from the UI
-deleteBtn.addEventListener("dblclick", function() {
-    console.log(process.env.DATABASE_URL)
+deleteBtn.addEventListener("dblclick", function () {
+    console.log(import.meta.env); // Check all environment variables available
+    console.log(import.meta.env.VITE_DATABASE_URL); // Specifically check your variable
     remove(referenceInDB)
     ulEl.innerHTML = ""
 })
 
 // Pushes the input value to the database and clears the input value
-inputBtn.addEventListener("click", function() {
-    console.log(process.env.DATABASE_URL)
+inputBtn.addEventListener("click", function () {
+    console.log(import.meta.env); // Check all environment variables available
+    console.log(import.meta.env.VITE_DATABASE_URL); // Specifically check your variable
     push(referenceInDB, inputEl.value)
     inputEl.value = ""
     console.log(process.env.DATABASE_URL)
