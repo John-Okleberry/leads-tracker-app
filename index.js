@@ -18,7 +18,8 @@ const deleteBtn = document.getElementById("delete-btn")
 
 // Provides the Firebase database URL (works through dotenv)
 const firebaseConfig = {
-	databaseURL: process.env.DATABASE_URL
+	// databaseURL: process.env.DATABASE_URL
+    databaseURL: import.meta.env.VITE_DATABASE_URL
   }
 
 const app = initializeApp(firebaseConfig)
