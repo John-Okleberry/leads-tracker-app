@@ -56,17 +56,12 @@ onValue(referenceInDB, function (snapshot) {
 
 // Removes the current data from the database and removes the old data from the UI
 deleteBtn.addEventListener("dblclick", function () {
-    console.log(import.meta.env); // Check all environment variables available
-    console.log(import.meta.env.VITE_DATABASE_URL); // Specifically check your variable
     remove(referenceInDB)
     ulEl.innerHTML = ""
 })
 
 // Pushes the input value to the database and clears the input value
 inputBtn.addEventListener("click", function () {
-    console.log(import.meta.env); // Check all environment variables available
-    console.log(import.meta.env.VITE_DATABASE_URL); // Specifically check your variable
     push(referenceInDB, inputEl.value)
     inputEl.value = ""
-    console.log(process.env.DATABASE_URL)
 })
