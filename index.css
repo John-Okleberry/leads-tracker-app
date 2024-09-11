@@ -1,0 +1,74 @@
+/* CSS reset to normalize formatting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Overall page formatting and spacing */
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;
+    line-height: 1.5;
+    /* Improves readability */
+    font-size: clamp(1rem, 1vw + 0.5rem, 4.0rem);
+    /* Responsive base font size */
+}
+
+/* Styling for the text input field */
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #5f9341;
+    margin-bottom: 4px;
+    font-size: clamp(0.875rem, 2.5vw + 0.25rem, 4rem);
+    /* Responsive base font size */
+}
+
+/* Styling for all buttons (Save Input and Delete All) */
+button {
+    background: #5f9341;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #5f9341;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: clamp(0.875rem, 2.5vw + 0.25rem, 4rem);
+    /* Responsive base font size */
+}
+
+/* Styling specific to the Delete All button */
+#delete-btn {
+    background: white;
+    color: #5f9341;
+}
+
+/* The portion of the page for displaying saved leads */
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Creates some space between leads on the page when rendered */
+li {
+    margin-top: 5px;
+    font-size: clamp(0.875rem, 2.5vw + 0.25rem, 4rem);
+    /* Responsive base font size */
+}
+
+/* Makes it so links are not the default blue color */
+a {
+    color: #5f9341;
+    text-decoration: none;
+    font-size: clamp(0.875rem, 2.5vw + 0.25rem, 4rem);
+    /* Responsive base font size */
+}
+
+label {
+    font-size: clamp(0.875rem, 2.5vw + 0.25rem, 3rem);
+    /* Responsive base font size */
+}
