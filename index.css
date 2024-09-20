@@ -17,6 +17,11 @@ body {
     /* Responsive base font size */
 }
 
+label {
+    color: #5f9341;
+    font-weight: 900;
+}
+
 /* Styling for the text input field */
 input {
     width: 100%;
@@ -44,6 +49,7 @@ button {
 #delete-btn {
     background: white;
     color: #5f9341;
+    padding-left: 0;
 }
 
 /* The portion of the page for displaying saved leads */
