@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 400px;
+    min-width: 302px;
     line-height: 1.5;
     /* Improves readability */
     font-size: clamp(1rem, 1vw + 0.5rem, 4.0rem);
